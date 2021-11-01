@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
@@ -49,6 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
+    DatabaseReference _testRef = FirebaseDatabase.instance.reference().child("test");
+    _testRef.set("Hello World ${Random().nextInt(100)}");
+
     setState(() {
       _counter++;
     });
