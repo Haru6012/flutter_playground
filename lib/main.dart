@@ -52,8 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
-    DatabaseReference _testRef = FirebaseDatabase.instance.reference().child("test");
-    _testRef.set("Hello World ${Random().nextInt(100)}");
+    DatabaseReference _testRef =
+        FirebaseDatabase.instance.reference().child("test");
+    _testRef.set("Hello World ${Random().nextInt(99)}");
 
     setState(() {
       _counter++;
